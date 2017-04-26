@@ -12,7 +12,7 @@ public class #SCRIPTNAME# : MonoBehaviour {
 
 	#region Editor
 	#if UNITY_EDITOR
-    [CustomEditor(typeof(AudioTriggerByDistance))]
+    	[CustomEditor(typeof(AudioTriggerByDistance))]
 	public class AudioTriggerByDistanceEditor : Editor {
 		
 		AudioTriggerByDistance component;
@@ -32,7 +32,7 @@ public class #SCRIPTNAME# : MonoBehaviour {
 		}
 
 	}
-    #endif
-    #endregion
+    	#endif
+    	#endregion
 
 }
