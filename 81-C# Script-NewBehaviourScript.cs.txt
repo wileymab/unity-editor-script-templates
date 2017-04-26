@@ -2,15 +2,37 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
 public class #SCRIPTNAME# : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		#NOTRIM#
+	// TODO #SCRIPTNAME# Behaviour
+
+	#region Editor
+	#if UNITY_EDITOR
+    [CustomEditor(typeof(AudioTriggerByDistance))]
+	public class AudioTriggerByDistanceEditor : Editor {
+		
+		AudioTriggerByDistance component;
+
+		public override void OnInspectorGUI() {
+		
+			serializedObject.Update();
+			DrawDefaultInspector();
+			component = (AudioTriggerByDistance)target;
+
+
+			// TODO #SCRIPTNAME#Editor Behaviour
+
+
+			serializedObject.ApplyModifiedProperties();
+
+		}
+
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		#NOTRIM#
-	}
+    #endif
+    #endregion
+
 }
